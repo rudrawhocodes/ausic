@@ -1,0 +1,64 @@
+{
+  "placeholderImages": [
+    {
+      "id": "about-visual",
+      "description": "Team brainstorming in a modern startup office.",
+      "imageUrl": "https://picsum.photos/seed/about/800/600"
+    },
+    {
+      "id": "event-1",
+      "description": "A person pitching an idea on a stage at a competition.",
+      "imageUrl": "https://picsum.photos/seed/event1/600/400"
+    },
+    {
+      "id": "event-2",
+      "description": "People networking at a business event.",
+      "imageUrl": "https://picsum.photos/seed/event2/600/400"
+    },
+    {
+      "id": "event-3",
+      "description": "A group of people working on a business model canvas.",
+      "imageUrl": "https://picsum.photos/seed/event3/600/400"
+    },
+    {
+      "id": "team-1",
+      "description": "Profile picture of a team member.",
+      "imageUrl": "https://picsum.photos/seed/t1/400/400"
+    },
+    {
+      "id": "team-2",
+      "description": "Profile picture of a team member.",
+      "imageUrl": "https://picsum.photos/seed/t2/400/400"
+    },
+    {
+      "id": "team-3",
+      "description": "Profile picture of a team member.",
+      "imageUrl": "https://picsum.photos/seed/t3/400/400"
+    },
+    {
+      "id": "team-4",
+      "description": "Profile picture of a team member.",
+      "imageUrl": "https://picsum.photos/seed/t4/400/400"
+    },
+    {
+      "id": "team-5",
+      "description": "Profile picture of a team member.",
+      "imageUrl": "https://picsum.photos/seed/t5/400/400"
+    },
+    {
+      "id": "team-6",
+      "description": "Profile picture of a team member.",
+      "imageUrl": "https://picsum.photos/seed/t6/400/400"
+    },
+    {
+      "id": "team-7",
+      "description": "Profile picture of a team member.",
+      "imageUrl": "https://picsum.photos/seed/t7/400/400"
+    },
+    {
+      "id": "team-8",
+      "description": "Profile picture of a team member.",
+      "imageUrl": "https://picsum.photos/seed/t8/400/400"
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%; /* Pure Black */
+    --foreground: 213 31% 91%;
+    --card: 220 13% 9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
+    --primary: 200 100% 50%; /* Electric Blue */
+    --primary-foreground: 210 40% 9.8%;
+    --secondary: 220 13% 18%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 220 9% 46%;
+    --muted-foreground: 215 28% 83%;
+    --accent: 220 13% 18%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 200 100% 40%; /* Electric Blue */
+    --input: 220 13% 18%;
+    --ring: 200 100% 55%; /* Electric Blue */
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 0 0% 0%; /* Pure Black */
+    --foreground: 213 31% 91%;
+    --card: 220 13% 9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
+    --primary: 200 100% 50%; /* Electric Blue */
+    --primary-foreground: 210 40% 9.8%;
+    --secondary: 220 13% 18%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 220 9% 46%;
+    --muted-foreground: 215 28% 83%;
+    --accent: 220 13% 18%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 200 100% 20%; /* Electric Blue */
+    --input: 220 13% 18%;
+    --ring: 200 100% 55%; /* Electric Blue */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/50 backdrop-blur-lg border border-primary/20 rounded-xl transition-all duration-300;
+  }
+  .glass-card:hover {
+    @apply border-primary/40 shadow-2xl shadow-primary/10 transform -translate-y-2;
+  }
+}
+
+@layer utilities {
+  /* Subtle glow */
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite;
+  }
+
+  @keyframes glow {
+    0% { box-shadow: 0 0 0px rgba(125,249,255,0.0); }
+    50% { box-shadow: 0 10px 40px rgba(125,249,255,0.08); }
+    100% { box-shadow: 0 0 0px rgba(125,249,255,0.0); }
+  }
+
+  /* Floating micro animation */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+  }
+
+  /* Shimmer (for image placeholders) */
+  .shimmer {
+    background: linear-gradient(90deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.06) 50%, rgba(255,255,255,0.02) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.8s linear infinite;
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  /* Button hover glow */
+  .btn-animated {
+    transition: transform .22s cubic-bezier(.2,.9,.2,1), box-shadow .22s;
+  }
+  .btn-animated:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(34,197,94,0.06), 0 6px 18px rgba(125,249,255,0.08);
+  }
+
+  /* Fancy loader container */
+  .loader-wrap {
+    display: grid;
+    place-items: center;
+    gap: 1rem;
+    color: hsl(var(--primary));
+  }
+  .loader-ring {
+    width: 160px;
+    height: 160px;
+    border-radius: 9999px;
+    background: conic-gradient(from 90deg at 50% 50%, rgba(125,249,255,0.15), transparent 60%);
+    display: grid; place-items: center;
+    animation: spin 6s linear infinite;
+    box-shadow: 0 10px 40px rgba(125,249,255,0.06);
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .loader-core {
+    width: 88px; height: 88px; border-radius: 9999px; background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); display:grid; place-items:center; backdrop-filter: blur(6px);
+  }
+  .loader-core h1 { font-weight:800; font-size:28px; letter-spacing:2px; }
+  /* Typewriter effect */
+  .typewriter {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Source Code Pro', monospace;
+    font-weight: 900;
+    font-size: clamp(3rem, 8vw, 6rem);
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid rgba(125,249,255,0.9);
+    width: 12ch; /* approximate width for A.U.S.I.C */
+    animation: typing 1.8s steps(8, end) forwards, blink-caret .6s step-end infinite;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    color: hsl(var(--primary));
+  }
+
+  @keyframes typing {
+    from { width: 0ch; }
+    to { width: 12ch; }
+  }
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: rgba(125,249,255,0.9); }
+  }
+
+  .loader-percent {
+    position: fixed;
+    right: 1.25rem; /* 20px */
+    bottom: 1.25rem; /* 20px */
+    z-index: 110;
+    color: hsl(var(--primary));
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace;
+    font-weight: 800;
+    font-size: clamp(1.25rem, 3.5vw, 2.5rem);
+    text-shadow: 0 6px 24px rgba(125,249,255,0.06);
+  }
+}
